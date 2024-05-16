@@ -12,7 +12,9 @@ Installing Keycloak is beyond the scope of this document.  However, there is a c
 
 ### Creating the required OCIS clients
 
-In order to create the required clients for OCIS in Keycloak, you can visit [this page](https://github.com/owncloud/ocis/tree/master/deployments/examples/ocis_keycloak/config/keycloak/clients) in the OCIS repo and download the JSON payloads for the clients you want.  In order to import them into Keycloak, click on "Clients", and then "Import client".  Make sure you give the clients unique IDs and, for the clients that have client secrets, go to the "Credentials" tab and click the "Regenerate" button.
+In order to create the required clients for OCIS in Keycloak, you can visit [this page](https://github.com/owncloud/ocis/tree/master/deployments/examples/ocis_keycloak/config/keycloak/clients) in the OCIS repo and download the JSON payloads for the clients you want.  In order to import them into Keycloak, click on "Clients", and then "Import client".  Make sure you give the web client a unique ID.
+
+**Note that the OCIS clients (Desktop/Mobile) have no way of setting your own client ID or secret for OpenID Connect flows, so if you use those clients, you'll need to use the payloads exactly as is, with the publicly-known values.  Make sure you understand the security implications of this before doing so.**
 
 ### Creating the required OCIS roles
 
